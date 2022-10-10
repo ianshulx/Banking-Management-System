@@ -1,0 +1,78 @@
+{% extends 'base.html' %}{% load static %} {% block title %}View Customers{% endblock title %} {%block body %}
+    
+
+<style>
+table{
+    font-size: 1.5rem;
+    margin-top: 10rem;
+    background: #fff;
+}
+thead th{
+    background: #012970;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    letter-spacing: 0.1rem;
+}
+tbody td{
+    font-family: "Roboto", sans-serif;
+    text-transform: none;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.btn{
+    margin-top: 0;
+    line-height: 0;
+    padding: 1.6rem 3rem;
+    border-radius: 0.2em;
+    transition: 0.2s;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: #2437e7;
+    }
+.btn:hover{
+    background: #4154f1;
+    color: #fff;
+    transform: scale(1.1);
+    transition: 0.2s;
+    }
+</style>
+
+
+<div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive-sm">                       
+                    <table class="table table-hover table-sm table-striped table-condensed table-bordered">
+                        <thead>
+                            <tr>
+                            <th scope="col" class="text-center py-3">ID</th>
+                            <th scope="col" class="text-center py-3">Account No</th>
+                            <th scope="col" class="text-center py-3">Name</th>
+                            <th scope="col" class="text-center py-3">E - Mail</th>
+                            <th scope="col" class="text-center py-3">Balance</th>
+                            <th scope="col" class="text-center py-3">View</th>
+                            </tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                    {% for customer in customers %}
+                    <tr>
+                        <td class="py-3 text-center">{{customer.id}}</td>
+                        <td class="py-3 text-center">{{customer.acc_no}}</td>
+                        <td class="py-3 text-left">{{customer.name}}</td>
+                        <td class="py-3 text-left">{{customer.email}}</td>
+                        <td class="py-3 text-center">&#8377;{{customer.balance}}</td>
+                        <td class="py-2 text-center"><a href="{% url 'customerdetails' customer.id %}"><button type="button" class="btn">View</button></a></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+</div>
+
+{% endblock body %}

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}{% load static %} {% block title %}{{customer.name}} Details{% endblock title %} {%block body %}
+
+<style type="text/css">
+h1{
+    font-weight: 800;
+    font-size: 3rem;
+    color: #ffa600;
+}
+img {
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    border: 0.5rem solid white;
+}
+p{
+    
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #012970;
+}
+span{
+    text-transform: lowercase;
+    font-size: 1.5rem;
+    color: #012970;
+    font-weight: 600;
+
+}
+.card{
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    width: 35%;
+    float: center;
+    background: #fff;
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    border:none;
+    margin-top: 10rem;
+    background: linear-gradient(
+    to bottom, 
+    #4154f1 0%, 
+    #4154f1 33%, 
+    #ffffff 33%, 
+    #ffffff 100%
+  );
+}
+@media(max-width:450px){
+  .card {
+    width: 100%;
+    margin-top: 6rem;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 450px){
+  .card {
+    width: 440px;
+    margin-top: 6rem;
+  }
+}
+</style>
+
+<div class="container">
+        <br><br>
+        <div class="card mx-auto">
+            <div><img src="{{customer.img.url}}"alt="avatar"></div><br>
+            <h1>{{customer.name}}</h1><br>
+            <p>Account Number : <span>{{customer.acc_no}}</span></p>
+            <p>Email : <span>{{customer.email}}</span></p>
+            <p>Balance : <span>&#8377;{{customer.balance}}</span></p>  
+        </div>
+        
+              
+</div>
+
+{% endblock body %}

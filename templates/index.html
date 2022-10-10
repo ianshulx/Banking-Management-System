@@ -1,0 +1,95 @@
+{% extends 'base.html' %}{% load static %} {% block title %} Bank Management System | Basic Banking System{% endblock title %} {%block body %}
+    
+  <!-- Home Section Starts -->
+  <section class="home" id="home">
+    <div class="content">
+    <h3>Welcome To Banking Management System</h3>
+    <a href="{% url 'transfer' %}" class="btn"><span>Tranfer Money</span>
+    <i class="fas fa-arrow-circle-right"></i>
+    </a>
+    </div>
+    <div class="image">
+        <img src="{% static 'img/hero.png' %}" alt="">
+    </div>
+  </section>
+<!-- Home Section Ends -->
+
+
+
+<!-- feature Section Starts -->
+  <section class="feature" id="feature">
+
+  <h1>Our Banking Features</h1>
+  <div class="box-container">
+      <div class="box">
+          <img src="{% static 'img/users.png' %}">
+          <h3>Customers</h3>
+          <a href="{% url 'viewcustomers' %}" class="btn"><span>view customers</span>
+          <i class="fas fa-chevron-right"></i>
+      </a>
+      </div>
+
+      <div class="box">
+          <img src="{% static 'img/transfer.png' %}" alt="">
+          <h3>Transactions</h3>
+          <a href="{% url 'transfer' %}" class="btn"><span>Make a Transaction</span>
+          <i class="fas fa-chevron-right"></i>
+      </a>
+      </div>
+
+      <div class="box">
+          <img src="{% static 'img/history.png' %}" alt="">
+          <h3>Transaction History</h3>
+          <a href="{% url 'transhistory' %}" class="btn"><span>Transaction History</span>
+          <i class="fas fa-chevron-right"></i>
+      </a>
+      </div>
+  </div>
+  </section>
+<!-- feature Section Ends -->
+
+
+<!-- contact Section Starts -->
+  <section class="contact" id="contact">
+        <h1>Contact Us</h1>
+        <div class="row">
+            <div class="image">
+            <img src="{% static 'img/contact.png' %}" alt="">
+            </div>
+            <form action="">
+                <div class="inputbox">
+                    <input type="text" placeholder="name">
+                    <input type="email" placeholder="email">
+                </div>
+                <div class="inputbox">
+                    <input type="number" placeholder="phone">
+                </div>
+                <textarea placeholder="message" cols="30" rows="10"></textarea>
+                <a href="#" class="btn"><span>Submit</span>
+                <i class="fa fa-paper-plane"></i>
+                </a>
+            </form>
+        </div>
+    </section>
+<!-- contact Section Ends -->
+
+<!-- footer strated -->
+  <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved |Banking Management system </p>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="twitter" href="https://twitter.com/ianshulx"><i class="fab fa-twitter"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/anshul-kumar-79289920b/"><i class="fab fa-linkedin"></i></a></li> 
+              <li><a class="github" href="https://github.com/ianshulx"><i class="fab fa-github"></i></a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+<!-- footer ended -->
+
+{% endblock body %}

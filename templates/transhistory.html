@@ -1,0 +1,52 @@
+{% extends 'base.html' %}{% load static %} {% block title %}Transaction History{% endblock title %} {%block body %}
+    
+<style>
+table{
+    font-size: 1.5rem;
+    margin-top: 10rem;
+    background: #fff;
+}
+thead th{
+    background: #012970;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    letter-spacing: 0.1rem;
+}
+tbody td{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+</style>
+
+	<div class="container">
+    <div class="table-responsive-sm">
+    <table class="table table-hover table-striped table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th class="py-3 text-center">S.No.</th>
+                <th class="py-3 text-center">Sender</th>
+                <th class="py-3 text-center">Receiver</th>
+                <th class="py-3 text-center">Amount</th>
+                <th class="py-3 text-center">Date & Time</th>
+                <th class="py-3 text-center">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        	{% for details in transactions %}
+            <tr>
+            <td class="py-3 text-center">{{details.id}}</td>
+            <td class="py-3 text-left">{{details.debited_from.name}}</td>
+            <td class="py-3 text-left">{{details.credited_to.name}}</td>
+            <td class="py-3 text-left">&#8377;{{details.amount}}</td>
+            <td class="py-3 text-center">{{details.date}}</td>
+            <td class="py-3 text-center">{{details.status}}</td>
+            </tr>
+            {% endfor %}
+       
+        </tbody>
+    </table>
+    </div>
+</div>
+
+{% endblock body %}
